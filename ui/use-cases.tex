@@ -1,0 +1,262 @@
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{0.75\linewidth}{||Sc|X||}
+        \hline
+        \hline
+        \textbf{Number} & \textbf{Use Case 1} \\
+        \hline
+        \textbf{Title} & \textbf{Login to system to perform desired functions} \\
+        \hline
+        \textbf{Preparer} & Jaecee Naylor \\
+        \hline
+        \textbf{Actor/User} & Bank Employee \\
+        \hline
+        \textbf{User Story} &
+        As a bank employee, I want to be able to login to the system to perform the interactions my role requires with the service. \\
+        \hline
+        \textbf{Course of Events} &
+        \begin{minipage}[l]{\linewidth}
+            \begin{enumerate}[wide, labelindent=0pt]
+                \item Log in using company email
+                \item Authenticate my login
+            \end{enumerate}
+            \vspace{4pt}
+        \end{minipage} \\
+        \hline
+        \textbf{Exceptions/Alternates} & 
+        \begin{minipage}[l]{\linewidth}
+            \vspace{2pt}
+            \begin{itemize}[wide, labelindent=0pt]
+                \item \textbf{None}
+            \end{itemize}
+        \end{minipage} \\
+        \hline
+        \textbf{Related UI} & \hyperref[templatesec]{Some hyperref to the UI sketch} \\
+        \hline
+        \hline
+    \end{tabularx}
+    \caption{Use case -- verification of income/identity/ownership}
+    \label{tab:use_case_fully_processed}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{0.75\linewidth}{||Sc|X||}
+        \hline
+        \hline
+        \textbf{Number} & \textbf{Use Case 2} \\
+        \hline
+        \textbf{Title} & \textbf{Verify income/identity/ownership for individual on application} \\
+        \hline
+        \textbf{Preparer} & Kira Pedoza \\
+        \hline
+        \textbf{Actor/User} & Lender \\
+        \hline
+        \textbf{User Story} &
+        As a Loan Processor, I want to select what type of verification(s) are needed for an application. Next, I want to submit documents to verify the selected fields for an individual and verify that the individual is on the application, as well as, quickly scan through the pdf during the submission process for potential errors the system may not catch. I also want the documents to be saved to a database for future audits.  \\
+        \hline
+        \textbf{Course of Events} &
+        \begin{minipage}[l]{\linewidth}
+            \begin{enumerate}[wide, labelindent=0pt]
+                \item Receive a document from a customer
+                \item Upload document for automatic processing of income
+                \item Scan the document for manual discrepancies the system may not catch
+                \item Upload the documents to a database
+                \item Receive feedback from the application indicating success, failure, or inconclusive status
+                \item Flag the application for further review if the manual scan was worrisome
+                \item Report to applicant the status of the verification document
+            \end{enumerate}
+            \vspace{4pt}
+        \end{minipage} \\
+        \hline
+        \textbf{Exceptions/Alternates} & 
+        \begin{minipage}[l]{\linewidth}
+            \vspace{2pt}
+            \begin{itemize}[wide, labelindent=0pt]
+                \item If a document cannot be verified automatically (either due to failure or flag produced by loan processor), it can still be uploaded and annotated by the application, but will need to be manually verified by a verifications team member (Use Case 2).
+            \end{itemize}
+        \end{minipage} \\
+        \hline
+        \textbf{Related UI} & \hyperref[templatesec]{Some hyperref to the UI sketch} \\
+        \hline
+        \hline
+    \end{tabularx}
+    \caption{Use case -- verification of income/identity/ownership}
+    \label{tab:use_case_fully_processed}
+\end{table}
+    
+
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{0.75\linewidth}{||Sc|X||}
+        \hline
+        \hline
+        \textbf{Number} & \textbf{Use Case 3} \\
+        \hline
+        \textbf{Title} & \textbf{View \& process partially processed loan document} \\
+        \hline
+        \textbf{Preparer} & Tyler Grant \\
+        \hline
+        \textbf{Actor/User} & Manager -- Loan Processing \\
+        \hline
+        \textbf{User Story} &
+        As a verifications team member, I want to be able to view partially processed loan documents, annotated by the application, to process the documents manually. I would then like to be able to annotate the document with my findings and upload it with my annotations using the application. \\
+        \hline
+        \textbf{Course of Events} &
+        \begin{minipage}[l]{\linewidth}
+            \begin{enumerate}[wide, labelindent=0pt]
+                \item Receive document from application and be able to access it within my application
+                \item View annotations left to me by my application
+                \item Process the document manually on my own
+                \item Flag any documents to reviewed by management
+                \item Annotate my notes on the document
+                \item Upload the updated annotations and document to the database using the application
+                \item Inform loan processor of status in order to inform applicant of updated status regarding their verification document
+            \end{enumerate}
+            \vspace{4pt}
+        \end{minipage} \\
+        \hline
+        \textbf{Exceptions/Alternates} & 
+        \begin{minipage}[l]{\linewidth}
+            \vspace{2pt}
+            \begin{itemize}[wide, labelindent=0pt]
+                \item \textbf{None}
+            \end{itemize}
+        \end{minipage} \\
+        \hline
+        \textbf{Related UI} & \hyperref[templatesec]{Some hyperref to the UI sketch} \\
+        \hline
+        \hline
+    \end{tabularx}
+    \caption{Use case -- partially processed document analysis}
+    \label{tab:use_case_partially_processed}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{0.75\linewidth}{||Sc|X||}
+        \hline
+        \hline
+        \textbf{Number} & \textbf{Use Case 4} \\
+        \hline
+        \textbf{Title} & \textbf{Update system's processing logic of a verification document} \\
+        \hline
+        \textbf{Preparer} & Jordan Ripplinger \\
+        \hline
+        \textbf{Actor/User} & Lending Manager \\
+        \hline
+        \textbf{User Story} &
+        As a Lending Manager, I want to be able to update system procedures on how to verify documents. I would then like my edits to be generated as a report and saved to the database. \\
+        \hline
+        \textbf{Course of Events} &
+        \begin{minipage}[l]{\linewidth}
+            \begin{enumerate}[wide, labelindent=0pt]
+                \item Access current verification procedures for a specific document within the system
+                \item Update the procedures for that document to match new company procedures for processing that kind of document
+                \item Receive the new generated report reflecting the change in processing of a document
+                \item Upload new report to the database
+                \item Share the new report with the verification team members
+            \end{enumerate}
+            \vspace{4pt}
+        \end{minipage} \\
+        \hline
+        \textbf{Exceptions/Alternates} & 
+        \begin{minipage}[l]{\linewidth}
+            \vspace{2pt}
+            \begin{itemize}[wide, labelindent=0pt]
+                \item \textbf{None}
+            \end{itemize}
+        \end{minipage} \\
+        \hline
+        \textbf{Related UI} & \hyperref[templatesec]{Some hyperref to the UI sketch} \\
+        \hline
+        \hline
+    \end{tabularx}
+    \caption{Use case -- entirely processed document analysis for legal purposes}
+    \label{tab:use_cases_legal}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{0.75\linewidth}{||Sc|X||}
+        \hline
+        \hline
+        \textbf{Number} & \textbf{Use Case 5} \\
+        \hline
+        \textbf{Title} & \textbf{Create system's processing logic of a new verification document type}\\
+        \hline
+        \textbf{Preparer} & Jordan Ripplinger \\
+        \hline
+        \textbf{Actor/User} & Lending Manager \\
+        \hline
+        \textbf{User Story} &
+        As a Lending Manager, I want to be able to create system procedures on how to verify document types currently not in the system. I would then like my edits to be generated as a report and saved to the database. \\
+        \hline
+        \textbf{Course of Events} &
+        \begin{minipage}[l]{\linewidth}
+            \begin{enumerate}[wide, labelindent=0pt]
+                \item Specify verification procedures for a new kind of verification document currently not in the system
+                \item Receive a generated report reflecting the creation and specifying how to process the new document type
+                \item Upload new report to the database
+                \item Share the new report with the verification team members
+            \end{enumerate}
+            \vspace{4pt}
+        \end{minipage} \\
+        \hline
+        \textbf{Exceptions/Alternates} & 
+        \begin{minipage}[l]{\linewidth}
+            \vspace{2pt}
+            \begin{itemize}[wide, labelindent=0pt]
+                \item \textbf{None.}
+            \end{itemize}
+        \end{minipage} \\
+        \hline
+        \textbf{Related UI} & \hyperref[templatesec]{Some hyperref to the UI sketch} \\
+        \hline
+        \hline
+    \end{tabularx}
+    \caption{Use case -- entirely processed document analysis for internal improvement}
+    \label{tab:use_case_internal}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{0.75\linewidth}{||Sc|X||}
+        \hline
+        \hline
+        \textbf{Number} & \textbf{Use Case 6} \\
+        \hline
+        \textbf{Title} & \textbf{View entirely processed loan documents for internal improvement} \\
+        \hline
+        \textbf{Preparer} & Kyler Farr \\
+        \hline
+        \textbf{Actor/User} & Internal Auditor \\
+        \hline
+        \textbf{User Story} &
+        As an internal auditor, I want to be able quickly view all documents, for a specific application, that have been verified by my company. I would like to annotate documents where I, the internal auditor, find issues with the application's processed documents. Lastly, I want to upload the document with my annotations to the database using the application. \\
+        \hline
+        \textbf{Course of Events} &
+        \begin{minipage}[l]{\linewidth}
+            \begin{enumerate}[wide, labelindent=0pt]
+                \item I want to be able to filter verified documents in the database down by team/verifier.
+                \item I want to view and annotate documents they have previously verified to look for errors.
+                \item I want to be able to save my annotations to a database so I can view them and make an analysis later if need be.
+            \end{enumerate}
+            \vspace{4pt}
+        \end{minipage} \\
+        \hline
+        \textbf{Exceptions/Alternates} & 
+        \begin{minipage}[l]{\linewidth}
+            \vspace{2pt}
+            \begin{itemize}[wide, labelindent=0pt]
+                \item \textbf{None.}
+            \end{itemize}
+        \end{minipage} \\
+        \hline
+        \textbf{Related UI} & \hyperref[templatesec]{Some hyperref to the UI sketch} \\
+        \hline
+        \hline
+    \end{tabularx}
+    \caption{Use case -- entirely processed document analysis for internal improvement}
+    \label{tab:use_case_internal}
+\end{table}
