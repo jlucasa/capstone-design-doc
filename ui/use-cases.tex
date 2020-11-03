@@ -1,3 +1,43 @@
+% \newcommand{\usecasetable}[8]{
+%     \begin{table}[H]
+%         \centering
+%         \begin{tabularx}{||Sc|X||}
+%             \hline
+%             \hline
+%             \textbf{Number} & \textbf{#1} \\
+%             \hline
+%             \textbf{Title} & \textbf{#2} \\
+%             \hline
+%             \textbf{Preparer} & #3 \\
+%             \hline
+%             \textbf{User Story} & #4 \\
+%             \hline
+%             \textbf{Course of Events} &
+%             \begin{minipage}[l]{\linewidth}
+%                 #5
+%             \end{minipage}
+%             \vspace{4pt} \\
+%             \hline
+%             \textbf{Exceptions/Alternates} &
+%             \vspace{2pt}
+%             \begin{minipage}[l]{\linewidth}
+%                 #6
+%             \end{minipage} \\
+%             \hline
+%             \hline
+%         \end{tabularx}
+%     \end{table}
+% }
+
+% \newcommand{\usecasetablehref}[2]{
+%     \hyperref[#1]{#2}
+% }
+
+% \newcommand{\usecasetabledesc}[2]{
+%     \caption{#1}
+%     \label{tab:#2}
+% }
+
 \begin{table}[H]
     \centering
     \begin{tabularx}{0.75\linewidth}{||Sc|X||}
@@ -31,12 +71,18 @@
             \end{itemize}
         \end{minipage} \\
         \hline
-        \textbf{Related UI} & \hyperref[templatesec]{Some hyperref to the UI sketch} \\
+        \textbf{Related UI} & 
+        \begin{minipage}[l]{\linewidth}
+            \begin{itemize}[wide, labelindent=0pt]
+                \item \href{fig:ui_1_pro}{Professional Rendering}
+                \item \href{fig:ui_1_sketch}{Sketch}
+            \end{itemize}
+        \end{minipage} \\
         \hline
         \hline
     \end{tabularx}
-    \caption{Use case -- verification of income/identity/ownership}
-    \label{tab:use_case_fully_processed}
+    \caption{Logging into the system}
+    \label{tab:use_case_login}
 \end{table}
 
 \begin{table}[H]
@@ -77,12 +123,29 @@
             \end{itemize}
         \end{minipage} \\
         \hline
-        \textbf{Related UI} & \hyperref[templatesec]{Some hyperref to the UI sketch} \\
+        \textbf{Related UI} &
+        \begin{minipage}[l]{\linewidth}
+            \begin{itemize}[wide, labelindent=0pt, noitemsep]
+                \item Professional Renderings:
+                    \begin{itemize}[noitemsep]
+                        \item \href{fig:ui_2_pro}{Upload Document}
+                        \item \href{fig:ui_2b_pro}{Select Types}
+                        \item \href{fig:ui_2c_pro}{Success Message}
+                        \item \href{fig:ui_2d_pro}{Failure Message}
+                        \item \href{fig:ui_2e_pro}{Inconclusive Message}
+                    \end{itemize}
+                \item Sketches:
+                    \begin{itemize}[noitemsep]
+                        \item \href{fig:ui_2_sketch}{Upload Document \& Select Types}
+                        \item \href{fig:ui_2b_sketch}{Result Message}
+                    \end{itemize}
+            \end{itemize}
+        \end{minipage} \\
         \hline
         \hline
     \end{tabularx}
-    \caption{Use case -- verification of income/identity/ownership}
-    \label{tab:use_case_fully_processed}
+    \caption{Verification of income/identity/ownership}
+    \label{tab:use_case_verification}
 \end{table}
     
 
@@ -97,7 +160,7 @@
         \hline
         \textbf{Preparer} & Tyler Grant \\
         \hline
-        \textbf{Actor/User} & Manager -- Loan Processing \\
+        \textbf{Actor/User} & Verifications Team Member \\
         \hline
         \textbf{User Story} &
         As a verifications team member, I want to be able to view partially processed loan documents, annotated by the application, to process the documents manually. I would then like to be able to annotate the document with my findings and upload it with my annotations using the application. \\
@@ -128,7 +191,7 @@
         \hline
         \hline
     \end{tabularx}
-    \caption{Use case -- partially processed document analysis}
+    \caption{Partially processed document analysis}
     \label{tab:use_case_partially_processed}
 \end{table}
 
@@ -138,6 +201,51 @@
         \hline
         \hline
         \textbf{Number} & \textbf{Use Case 4} \\
+        \hline
+        \textbf{Title} & \textbf{View \& process partially processed loan document} \\
+        \hline
+        \textbf{Preparer} & Jordan Ripplinger \\
+        \hline
+        \textbf{Actor/User} & Lending Manager \\
+        \hline
+        \textbf{User Story} &
+        As a lending manager, I want to be able to view partially processed loan documents, annotated by the application, to process the documents manually. I would then like to be able to annotate the document with my findings and upload it with my annotations using the application. \\
+        \hline
+        \textbf{Course of Events} &
+        \begin{minipage}[l]{\linewidth}
+            \begin{enumerate}[wide, labelindent=0pt]
+                \item Receive document from application that has been flagged by verifications team member and be able to access it within my application
+                \item View annotations left to me by application and verifications team member and flags left to me by Loan Processor
+                \item Reach a decision about the status of the verifcation document manually
+                \item Annotate the document with my personal notes
+                \item Upload the updated annotated document to the database using the application
+                \item Inform Loan Processor of status in order to inform applicant of updated status regarding their verification document.
+            \end{enumerate}
+            \vspace{4pt}
+        \end{minipage} \\
+        \hline
+        \textbf{Exceptions/Alternates} & 
+        \begin{minipage}[l]{\linewidth}
+            \vspace{2pt}
+            \begin{itemize}[wide, labelindent=0pt]
+                \item \textbf{None}
+            \end{itemize}
+        \end{minipage} \\
+        \hline
+        \textbf{Related UI} & \hyperref[templatesec]{Some hyperref to the UI sketch} \\
+        \hline
+        \hline
+    \end{tabularx}
+    \caption{Partially processed document analysis}
+    \label{tab:use_case_partially_processed}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{0.75\linewidth}{||Sc|X||}
+        \hline
+        \hline
+        \textbf{Number} & \textbf{Use Case 5} \\
         \hline
         \textbf{Title} & \textbf{Update system's processing logic of a verification document} \\
         \hline
@@ -172,8 +280,8 @@
         \hline
         \hline
     \end{tabularx}
-    \caption{Use case -- entirely processed document analysis for legal purposes}
-    \label{tab:use_cases_legal}
+    \caption{Updating system procedures on verification of documents}
+    \label{tab:use_case_update_sys_procedures}
 \end{table}
 
 \begin{table}[H]
@@ -181,7 +289,7 @@
     \begin{tabularx}{0.75\linewidth}{||Sc|X||}
         \hline
         \hline
-        \textbf{Number} & \textbf{Use Case 5} \\
+        \textbf{Number} & \textbf{Use Case 6} \\
         \hline
         \textbf{Title} & \textbf{Create system's processing logic of a new verification document type}\\
         \hline
@@ -215,8 +323,8 @@
         \hline
         \hline
     \end{tabularx}
-    \caption{Use case -- entirely processed document analysis for internal improvement}
-    \label{tab:use_case_internal}
+    \caption{Creating system procedures for verification of documents}
+    \label{tab:use_case_create_sys_procedures}
 \end{table}
 
 \begin{table}[H]
@@ -224,7 +332,7 @@
     \begin{tabularx}{0.75\linewidth}{||Sc|X||}
         \hline
         \hline
-        \textbf{Number} & \textbf{Use Case 6} \\
+        \textbf{Number} & \textbf{Use Case 7} \\
         \hline
         \textbf{Title} & \textbf{View entirely processed loan documents for internal improvement} \\
         \hline
@@ -257,6 +365,6 @@
         \hline
         \hline
     \end{tabularx}
-    \caption{Use case -- entirely processed document analysis for internal improvement}
+    \caption{Entirely processed document analysis for internal improvement}
     \label{tab:use_case_internal}
 \end{table}

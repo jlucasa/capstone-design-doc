@@ -1,0 +1,55 @@
+\doublespacing
+
+\subsection{System Features}
+
+Each system component has been specified into the following features, with Rank 1 features being our requirements for a minimum-viable product, Rank 2 features being our requirements for a viable product for use in the industry, and Rank 3 features being our requirements for a feature-rich product worthy of supplanting other options in the industry. Rank 3 features are relatively complex to the rest of the stack, so we chose to limit the number in order to avoid too many features without adequate form or functionality. \textbf{All features should be implemented in the order that they arrive here. For instance, in order for the second rank 1 feature to be implemented, the first rank 1 feature must be implemented.}
+
+\subsubsection{Rank 1}
+
+\begin{itemize}[labelindent=0pt, wide]
+    \item \textbf{\textit{Secure and Safe handling of PII (personally identifiable information) locally and over the network.}} This is key for compliance with government policies regarding the handling of personally identifiable information. This will involve the utilization of tried-and-tested security libraries that follow the same protocol that our client institution is already following itself.
+    
+    \item \textbf{\textit{Secure and safe storage of data.}} As with secure and safe handling of PII, this will be key to adhering to policies set by the institution or government, and will involve that same usage of tried-and-tested security libraries.
+    
+    \item \textbf{\textit{Parse non-variable/simple attachments.}} This is the beginning of our core featureset. It constitutes the parsing of standard documents which follow an expected form, such as the W2 and 1040-EZ forms, drivers' licenses, and social security cards.
+    
+    \item \textbf{\textit{API communications over a network to check an applicant's provided data against its gold standard.}} For this feature, we want to be able to send the data provided from the parsed document to an official external API authorized to handle PII (personally identifiable information) in order to confirm that the data provided is consistent with the ``gold standard'' provided by the API. Jaecee will manage communications with EnerBank to attain access to their API for this purpose.
+    
+    \item \textbf{\textit{Process results from a parse to see if an application is still in need of other verifications, needs to be reviewed, or is denied/approved based on what was provided.}} This is the primary, most basic useful function of our system. Even if the applicant's provided data matches its gold standard, there are other factors that can prevent a document from being verified -- for instance, a high debt-to-income ratio. This will generate responses such as:
+    
+    \begin{itemize}
+        \item \textit{Success:} The application is approved \textbf{or denied}. This means that the system was able to verify what it was looking for (income, identity, home ownership) through its contact in the previous feature, and the application either satisfied the criteria for acceptance or didn't. The system will return the analyzed document and results, in case the employee needs to report any results if they find them potentially inaccurate.
+        
+        \item \textit{Failure:} Our system was unable to confidently process the application due to a number of issues, such as detected fraudulent behavior or the document being blurry/otherwise indecipherable. In this case, the document should be forwarded to a verifications team member for review.
+        
+        \item \textit{Inconclusive:} There is insufficient evidence to verify the application. In this case, a verifications team member should review the specific verification type that the institution did not receive with the customer and ask them to send it in.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Rank 2}
+
+\begin{itemize}[labelindent=0pt, wide]
+    \item \textbf{\textit{Secure login and password help.}} While accounts are not necessary for the minimum viable product, they are necessary for features such as auditing, annotation, and overriding of conclusions reached by the system.
+    
+    \item \textbf{\textit{Built-in PDF viewer.}} This is necessary for annotation by both the system and the user, as well as auditing.
+    
+    \item \textbf{\textit{System annotations of a document.}} This will help to provide more context to the user as to why the system came to the conclusion that it did for verification.
+    
+    \item \textbf{\textit{Manual flagging and passing of an application for indication that it needs to be further reviewed.}} This will allow verifications team members to raise issues with conclusions that the system came to, and securely communicate/deliver these results to the individual next-in-line to review them.
+    
+    \item \textbf{\textit{Manual annotation of a document for users.}} With this feature, employees will be able to select and annotate specific elements of a document with any findings or concerns they might have. This will help to give more manual context when flagging applications and sending them to higher-ups for review.
+    
+    \item \textbf{\textit{The ability to override our system's decision.}} For managers and verifications team members, the ability to override our system's decision should it be clear that it made a mistake is important. This will be hopefully unlikely, yet still possible, and so it would be nice to account for this.
+    
+    \item \textbf{\textit{A comprehensive auditing feature.}} This includes locating documents attached to any already-submitted applications in the database, selecting which document to review, saving of annotations done on documents associated with said application, and specifying whether the given uploaded document was correctly or incorrectly processed, either by the system or manually. 
+\end{itemize}
+
+\subsubsection{Rank 3}
+
+\begin{itemize}[labelindent=0pt, wide]
+    \item \textbf{\textit{Using natural language processing, parse variable/advanced attachments.}} This specific feature will require natural language processing because the documents it pertains to don't necessarily follow government-set or institution-set standards. Attachments which fit this description include, but are not limited to, paystubs, deeds, mortgage statements, and property tax bills.
+    
+    \item \textbf{\textit{Creation and updating of procedures for a verification process.}} This is incredibly important for organizations that might observe a change in their verifications process, or ones that have a different verifications process when compared to the given standard. This means that our system will need to be able to adaptively analyze a document under new standards provided by these custom rules.
+    
+    \item \textbf{\textit{Secure sharing and exporting of new/updated verification procedures.}} This is hardly necessary to a successful variant of our project, but would contribute to a rich set of features which allow for flexibility in cases of, for instance, interdepartmental communication or establishment of better standards for verifications processes.
+\end{itemize}
