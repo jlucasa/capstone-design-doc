@@ -1,4 +1,5 @@
 \documentclass[12pt, fleqn]{article}
+
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
@@ -6,7 +7,6 @@
 \usepackage{amsmath,amsthm,amssymb,amsfonts}
 \usepackage{color}
 \usepackage{setspace}
-\usepackage{hyperref}
 \usepackage{enumitem}
 \usepackage{fancyhdr}
 \usepackage{graphicx}
@@ -18,13 +18,35 @@
 \usepackage{cellspace}
 \usepackage{xparse}
 \usepackage{keyval}
+\usepackage{listings}
+\usepackage{caption}
+\usepackage[xetex, bookmarks=true, breaklinks, pagebackref=true]{hyperref}
+\usepackage{bookmark}
+\usepackage{fontspec}
+\usepackage{titlesec}
 
-\renewcommand{\familydefault}{\sfdefault}
+\restylefloat{figure}
+\restylefloat{table}
+
+% \renewcommand{\familydefault}{\sfdefault}
 \setlist[enumerate]{topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex}
 % \renewcommand\tabularxcolumn[1]{m{#1}}% for vertical centering text in X column
 
 \setlength{\cellspacetoplimit}{4pt}
 \setlength{\cellspacebottomlimit}{4pt}
+
+\hypersetup{
+    colorlinks=true,
+    linktoc=all,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Bank Document Verifier Design Document}
+}
+
+\urlstyle{same}
+
+\usepackage[parfill]{parskip}
 
 \ExplSyntaxOn
 
@@ -48,9 +70,52 @@
 
 \ExplSyntaxOff
 
+\newcommand{\setlststylejs}{
+    \definecolor{lightgray}{rgb}{.9,.9,.9}
+    \definecolor{darkgray}{rgb}{.4,.4,.4}
+    \definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+    \definecolor{darkgreen}{RGB}{0, 100, 0}
+    
+    \lstdefinelanguage{JavaScript}{
+      keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+      keywordstyle=\color{blue}\bfseries,
+      ndkeywords={class, export, boolean, throw, implements, import, this},
+      ndkeywordstyle=\color{darkgray}\bfseries,
+      identifierstyle=\color{black},
+      sensitive=false,
+      comment=[l]{//},
+      morecomment=[s]{/*}{*/},
+      commentstyle=\color{darkgreen}\ttfamily,
+      stringstyle=\color{red}\ttfamily,
+      morestring=[b]',
+      morestring=[b]"
+    }
+    
+    \lstset{
+       language=JavaScript,
+       backgroundcolor=\color{lightgray},
+       extendedchars=true,
+       basicstyle=\footnotesize\ttfamily,
+       showstringspaces=false,
+       showspaces=false,
+       numberstyle=\footnotesize,
+       numbersep=9pt,
+       tabsize=2,
+       breaklines=true,
+       showtabs=false,
+       captionpos=b
+    }
+}
+
 \pagestyle{fancy}
 \renewcommand{\headrulewidth}{0pt}
 \setlength{\headheight}{53.51314pt}
 \lhead{\textbf{Bank Document Verifier} \\ Design Document}
 \rhead{\includesvg[width=1.25cm]{assets/logo.svg}}
 \cfoot{\thepage}
+
+\titleformat*{\section}{\LARGE}
+\titleformat*{\subsection}{\Large}
+\titleformat*{\subsubsection}{\large}
+\titleformat*{\paragraph}{\large}
+\titleformat*{\subparagraph}{\large}

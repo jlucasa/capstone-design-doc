@@ -1,5 +1,23 @@
 \input{assets/preamble}
 
+\setmainfont{DMSerifDisplay}[
+    Path=./assets/fonts/DMSerif/,
+    Extension=.ttf,
+    UprightFont=*-Regular,
+    ItalicFont=*-Italic
+]
+
+\setsansfont{WorkSans}[
+    Path=./assets/fonts/WorkSans/,
+    Extension=.ttf,
+    UprightFont=*-Regular,
+    BoldFont=*-Bold,
+    ItalicFont=*-Italic,
+    BoldItalicFont=*-BoldItalic
+]
+
+\setlststylejs
+
 \begin{document}
 
 \input{title-page}
@@ -8,28 +26,40 @@
 
 \section{Executive Summary}
 
-\input{executive-summary/executive-summary}
+\textsf{\input{executive-summary/executive-summary}}
 
 \section{Background}
 
-\input{executive-summary/background}
+\textsf{\input{executive-summary/background}}
 
 \section{Requirements Analysis}
 
-\input{requirements-analysis/system-architecture}
+\textsf{\input{requirements-analysis/system-architecture}}
 
-\input{requirements-analysis/personnel}
+\textsf{\input{requirements-analysis/personnel}}
 
-\input{requirements-analysis/system-features}
+\textsf{\input{requirements-analysis/system-features}}
+
+\section{Software Engineering Tools \& Techniques}
+
+\textsf{\input{software-eng-tools-techniques/sd-method}}
+
+\textsf{\input{software-eng-tools-techniques/tools}}
+
+\textsf{\input{software-eng-tools-techniques/documentation}}
+
+\textsf{\input{software-eng-tools-techniques/code-reviews}}
+
+\textsf{\input{software-eng-tools-techniques/team-comm-meetings}}
 
 \appendix
 
 \section{Use Cases}
 
-\input{ui/use-cases}
+\textsf{\input{ui/use-cases}}
 
 \section{UI Sketches}
 
-\input{ui/ui-sketches}
+\textsf{\input{ui/ui-sketches}}
 
 \end{document}

@@ -1,0 +1,21 @@
+\subsection{Documentation}
+
+When devising a plan for documentation, we wanted the process of porting code comments to readable, easily accessible documentation to be as simple as possible. As such, we are looking into using tools such as \href{https://jsdoc.app/index.html}{JSDoc}, \href{https://rfsber.home.xs4all.nl/Robo/}{ROBODoc} and \href{https://docs.python.org/3/library/pydoc.html}{pydoc} for automatic documentation generation from in-code documentation.
+
+For code styling, we have decided that function/variable declarations will be written in \verb|camelCase|, and all other styling decisions will be made according to Google's officially posted \href{https://google.github.io/styleguide/}{style guides}.
+
+\medskip
+
+Additionally, we are looking to implement a header comment standard for all code files generated -- it will be as such:
+
+\lstinputlisting[caption=Header comment standard for all code files generated]{assets/code/header-comment-example.js}
+
+Finally, we want to implement a commenting standard for all code files:
+
+\medskip
+
+\begin{itemize}[nosep]
+    \item \textbf{Comment before code creation:} Header description
+    \item \textbf{Comment during code creation:} Function descriptions (including parameters)
+    \item \textbf{Comment after/discretionary for complicated code:} Block descriptions
+\end{itemize}
